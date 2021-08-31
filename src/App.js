@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import logo from './assets/planet.png';
 import Navbar from './components/Navbar';
 import './App.css';
+import Rockets from './components/Rockets';
 
 function App() {
   return (
@@ -12,7 +13,9 @@ function App() {
         </header>
         <Navbar />
         <Switch>
-          <Route exact path="/" />
+          <Route exact path="/">
+            <Rockets />
+          </Route>
           <Route path="/missions" />
           <Route path="/profile" />
         </Switch>
