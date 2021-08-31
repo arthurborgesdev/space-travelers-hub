@@ -1,23 +1,48 @@
-.App {
+.App-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-bottom: 2px solid #ccc;
+  margin: 0 40px;
+  padding: 20px ;
+  font-size: 20px;
 }
 
 .App-logo {
-  width: 100px;
+  width: 60px;
 }
 
 a {
   text-decoration: none;
+  color: #007bff;
 }
 
 .selected {
-  border-bottom: 1px solid black;
+  border-bottom: 2px solid #007bff;
 }
 
 .nav-class {
   display: flex;
   gap: 10px;
-  margin-right: 20px;
+  margin-left: 20px;
+}
+
+table {
+  margin: 20px 5%;
+  width: 90%;
+}
+
+table, th, td {
+  text-align: left;
+  border: 2px solid #dee2e6;
+  border-collapse: collapse;
+}
+
+thead {
+  border-bottom: 4px solid #dee2e6;
+}
+
+th, td {
+  padding: 12px;
+  font-size: 18px;
 }
