@@ -1,13 +1,13 @@
-const GET_ROCKETS = 'books/booksslice/GET_BOOKS';
-const GET_ROCKETS_SUCCESS = 'books/booksslice/GET_BOOKS_SUCCESS';
-const GET_ROCKETS_ERR = 'books/booksslice/GET_BOOKS_ERR';
+const GET_ROCKETS = 'books/rocketsslice/GET_ROCKETS';
+const GET_ROCKETS_SUCCESS = 'rockets/rocketsslice/GET_ROCKETS_SUCCESS';
+const GET_ROCKETS_ERR = 'rockets/rocketsslice/GET_ROCKETS_ERR';
 
 const rocketsURL = 'https://api.spacexdata.com/v3/rockets';
 
 const getRockets = () => async (dispatch) => {
   dispatch({ type: GET_ROCKETS });
   const response = await fetch(rocketsURL);
-  const books = await response.json();
+  const rockets = await response.json();
   return dispatch({ type: GET_ROCKETS_SUCCESS, rockets });
 };
 
