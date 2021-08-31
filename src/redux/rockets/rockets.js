@@ -3,13 +3,13 @@ import { GET_ROCKETS, GET_ROCKETS_SUCCESS, GET_ROCKETS_ERR } from '../slices/roc
 // Initial state
 
 const initialState = {
-  rockets: []
-}
+  rockets: [],
+};
 
-// Reducer 
+// Reducer
 
 const reducer = (state = initialState, action) => {
-  switch(action.type) {  
+  switch (action.type) {
     case GET_ROCKETS:
       return { ...state, pending: true };
     case GET_ROCKETS_SUCCESS:
@@ -19,6 +19,6 @@ const reducer = (state = initialState, action) => {
     default:
       return state;
   }
-}
+};
 
 export default reducer;

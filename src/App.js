@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { Provider } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
 import logo from './assets/planet.png';
 import Navbar from './components/Navbar';
 import './App.css';
@@ -7,33 +8,35 @@ import Rockets from './components/Rockets';
 import Missions from './components/missions/Missions';
 import Profile from './components/profile/Profile';
 import getRockets from './redux/slices/rocketsSlice';
-import store from './redux/configureStore';
 
-function App() {
-  getRockets();
+const App = () => {
+  const dispatch = useDispatch();
+
+  useEffect(async () => {
+    await dispatch(getRockets());
+  });
+
   return (
-    <Provider store={store}>
-      <div className="App">
-        <Router>
-          <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <Navbar />
-          </header>
-          <Switch>
-            <Route exact path="/">
-              <Rockets />
-            </Route>
-            <Route path="/missions">
-              <Missions />
-            </Route>
-            <Route path="/profile">
-              <Profile />
-            </Route>
-          </Switch>
-        </Router>
-      </div>
-    </Provider>
+    <div className="App">
+      <Router>
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <Navbar />
+        </header>
+        <Switch>
+          <Route exact path="/">
+            <Rockets />
+          </Route>
+          <Route path="/missions">
+            <Missions />
+          </Route>
+          <Route path="/profile">
+            <Profile />
+          </Route>
+        </Switch>
+      </Router>
+    </div>
   );
-}
+};
 
 export default App;
