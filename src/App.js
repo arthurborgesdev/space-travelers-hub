@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import logo from './assets/planet.png';
 import Navbar from './components/Navbar';
 import './App.css';
-import Rockets from './components/Rockets';
+import Rockets from './components/rockets/Rockets';
 import Missions from './components/missions/Missions';
 import Profile from './components/profile/Profile';
 import getRockets from './redux/slices/rocketsSlice';

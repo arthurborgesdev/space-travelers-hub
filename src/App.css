@@ -53,10 +53,12 @@ td {
 /* ------------- Rockets ------------- */
 .rocket-container {
   display: flex;
+  margin: 0 50px;
 }
 
 .rocket-image {
   margin: 10px;
+  width: 200px;
 }
 
 .rocket-right-panel {
