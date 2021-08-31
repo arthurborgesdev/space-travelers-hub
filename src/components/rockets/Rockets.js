@@ -1,24 +1,21 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
 const Rockets = () => {
-  const rockets = {
-    title: 'Falcon 1',
-    description: 'The Falcon 1 was an expendable...',
-    reserved: true,
-  };
+  const rockets = useSelector((state) => state.rockets) || [];
 
-  return (
-    <div className="rocket-container">
-      <img className="rocket-image" alt="rocket" src="https://picsum.photos/200/150" />
+  rockets.map((rocket) => (
+    <div key={rocket.id} className="rocket-container">
+      <img className="rocket-image" alt="rocket" src={rocket.flickr_images[0]} />
       <div className="rocket-right-panel">
-        <p className="rocket-title">{rockets.title}</p>
+        <p className="rocket-title">{rocket.rocket_name}</p>
         <p className="rocket-description">
           {
-            rockets.reserved
+            rocket.reserved
               ? <input className="reserved-notification" type="button" value="Reserved" />
               : null
           }
-          {rockets.description}
+          {rocket.description}
         </p>
         {
           rockets.reserved
@@ -27,7 +24,7 @@ const Rockets = () => {
         }
       </div>
     </div>
-  );
+  ));
 };
 
 export default Rockets;
