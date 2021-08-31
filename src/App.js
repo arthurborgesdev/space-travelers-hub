@@ -1,13 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import logo from './assets/planet.png';
 import Navbar from './components/Navbar';
 import './App.css';
 import Rockets from './components/Rockets';
 import Missions from './components/missions/Missions';
 import Profile from './components/profile/Profile';
-import logo from './assets/planet.png';
+import getRockets from './redux/slices/rocketsSlice';
 
-function App() {
+const App = () => {
+  const dispatch = useDispatch();
+
+  useEffect(async () => {
+    await dispatch(getRockets());
+  });
+
   return (
     <div className="App">
       <Router>
@@ -29,6 +37,6 @@ function App() {
       </Router>
     </div>
   );
-}
+};
 
 export default App;
