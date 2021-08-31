@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import logo from './assets/planet.png';
 import Navbar from './components/Navbar';
 import './App.css';
+import Rockets from './components/Rockets';
 import Missions from './components/missions/Missions';
 import Profile from './components/profile/Profile';
 
@@ -14,7 +15,9 @@ function App() {
           <Navbar />
         </header>
         <Switch>
-          <Route exact path="/" />
+          <Route exact path="/">
+            <Rockets />
+          </Route>
           <Route path="/missions">
             <Missions />
           </Route>
