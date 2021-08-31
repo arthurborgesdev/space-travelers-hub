@@ -12,6 +12,13 @@
   width: 60px;
 }
 
+.logo-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
 a {
   text-decoration: none;
   color: #007bff;
@@ -27,6 +34,7 @@ a {
   margin-left: 20px;
 }
 
+/* ------------- Missions ------------- */
 table {
   margin: 20px 5%;
   width: 90%;
@@ -46,8 +54,41 @@ thead {
 
 th,
 td {
-  padding: 12px;
+  padding: 10px;
   font-size: 18px;
+}
+
+tbody > tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+.mission-title,
+.mission-description {
+  vertical-align: text-top;
+}
+
+.mission-title {
+  font-weight: bold;
+}
+
+.mission-reserve > span {
+  white-space: nowrap;
+  color: #fff;
+  background-color: #6d757d;
+  border-radius: 6px;
+  padding: 4px;
+  font-weight: bold;
+}
+
+.mission-btn > button {
+  white-space: nowrap;
+  color: #343a40;
+  background-color: inherit;
+  border: 1px solid #343a40;
+  border-radius: 4px;
+  font-size: 20px;
+  padding: 8px;
+  margin: 0 20px;
 }
 
 /* ------------- Rockets ------------- */

@@ -20,7 +20,10 @@ const App = () => {
     <div className="App">
       <Router>
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+          <div className="logo-container">
+            <img src={logo} className="App-logo" alt="logo" />
+            <h1>Space Traveler&apos;s Hub</h1>
+          </div>
           <Navbar />
         </header>
         <Switch>
