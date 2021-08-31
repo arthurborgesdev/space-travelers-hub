@@ -4,7 +4,7 @@
   justify-content: space-between;
   border-bottom: 2px solid #ccc;
   margin: 0 40px;
-  padding: 20px ;
+  padding: 20px;
   font-size: 20px;
 }
 
@@ -32,7 +32,9 @@ table {
   width: 90%;
 }
 
-table, th, td {
+table,
+th,
+td {
   text-align: left;
   border: 2px solid #dee2e6;
   border-collapse: collapse;
@@ -42,7 +44,8 @@ thead {
   border-bottom: 4px solid #dee2e6;
 }
 
-th, td {
+th,
+td {
   padding: 12px;
   font-size: 18px;
 }
