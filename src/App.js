@@ -3,6 +3,8 @@ import logo from './assets/planet.png';
 import Navbar from './components/Navbar';
 import './App.css';
 import Rockets from './components/Rockets';
+import Missions from './components/missions/Missions';
+import Profile from './components/profile/Profile';
 
 function App() {
   return (
@@ -10,14 +12,18 @@ function App() {
       <Router>
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
+          <Navbar />
         </header>
-        <Navbar />
         <Switch>
           <Route exact path="/">
             <Rockets />
           </Route>
-          <Route path="/missions" />
-          <Route path="/profile" />
+          <Route path="/missions">
+            <Missions />
+          </Route>
+          <Route path="/profile">
+            <Profile />
+          </Route>
         </Switch>
       </Router>
     </div>
