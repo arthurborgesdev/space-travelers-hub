@@ -13,7 +13,21 @@ const reducer = (state = initialState, action) => {
     case GET_ROCKETS:
       return { ...state, pending: true };
     case GET_ROCKETS_SUCCESS:
-      return { ...state, pending: false, rockets: action.rockets };
+    {
+      const data = action.rockets;
+      const subset = [];
+      data.forEach((rocket) => {
+        subset.push(
+          {
+            id: rocket.id,
+            rocket_name: rocket.rocket_name,
+            description: rocket.description,
+            flickr_images: rocket.flickr_images,
+          },
+        );
+      });
+      return { ...state, pending: false, rockets: subset };
+    }
     case GET_ROCKETS_ERR:
       return { ...state, pending: false, error: action.error };
     default:
