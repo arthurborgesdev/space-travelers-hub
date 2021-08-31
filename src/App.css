@@ -24,25 +24,44 @@ a {
 
 /* ------------- Rockets ------------- */
 .rocket-container {
-
+  display: flex;
 }
 
 .rocket-image {
-
+  margin: 10px;
 }
 
 .rocket-right-panel {
-
+  width: 100%;
 }
 
 .rocket-title {
-
+  font-weight: bold;
 }
 
 .rocket-description {
-
+  font-family: 'Courier New', Courier, monospace;
 }
 
-.rocket-reservation {
-  
+.reserved-notification {
+  margin-right: 5px;
+  background-color: #18a2b8;
+  color: #fff;
+  border-radius: 5px;
+  border: 1px solid #18a2b8;
+}
+
+.rocket-cancel {
+  border: 1px solid #6d757d;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #6d757d;
+}
+
+.rocket-reserve {
+  background-color: #007bff;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #007bff;
 }
