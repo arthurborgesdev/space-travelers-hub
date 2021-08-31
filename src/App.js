@@ -1,10 +1,11 @@
+import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import logo from './assets/planet.png';
 import Navbar from './components/Navbar';
 import './App.css';
 import Rockets from './components/Rockets';
 import Missions from './components/missions/Missions';
 import Profile from './components/profile/Profile';
+import logo from './assets/planet.png';
 
 function App() {
   return (
