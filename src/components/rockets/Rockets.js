@@ -1,9 +1,10 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { reserveRocket } from '../../redux/rockets/rockets';
 
 const Rockets = () => {
   const rockets = useSelector((state) => state.rocketsReducer.rockets);
-  
+
   const dispatch = useDispatch();
 
   const handleReserveClick = (e) => {
