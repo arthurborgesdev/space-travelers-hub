@@ -1,38 +1,199 @@
-.App {
-  text-align: center;
+.App-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid #ccc;
+  margin: 0 40px;
+  padding: 20px;
+  font-size: 20px;
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+  width: 60px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.logo-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  gap: 20px;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+a {
+  text-decoration: none;
+  color: #007bff;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.selected {
+  border-bottom: 2px solid #007bff;
+}
+
+.nav-class {
+  display: flex;
+  gap: 10px;
+  margin-left: 20px;
+}
+
+/* ------------- Missions ------------- */
+table {
+  margin: 20px 5%;
+  width: 90%;
+}
+
+table,
+th,
+td {
+  text-align: left;
+  border: 2px solid #dee2e6;
+  border-collapse: collapse;
+}
+
+thead {
+  border-bottom: 4px solid #dee2e6;
+}
+
+th,
+td {
+  padding: 10px;
+}
+
+th,
+.mission-title {
+  font-size: 20px;
+}
+
+tbody > tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+.mission-title {
+  vertical-align: text-top;
+  font-weight: bold;
+}
+
+.mission-description {
+  letter-spacing: 1px;
+}
+
+.mission-reserve,
+.mission-btn {
+  text-align: center;
+}
+
+.mission-reserve > span {
+  white-space: nowrap;
+  color: #fff;
+  border-radius: 6px;
+  padding: 4px;
+  font-weight: bold;
+}
+
+.active-member {
+  background-color: #18a2b8;
+}
+
+.inactive-member {
+  background-color: #6d757d;
+}
+
+.mission-btn {
+  min-width: 190px;
+}
+
+.mission-btn > button {
+  white-space: nowrap;
+  background-color: inherit;
+  border-radius: 4px;
+  font-size: 20px;
+  padding: 8px;
+  margin: 0 20px;
+}
+
+.join-btn {
+  color: #343a40;
+  border: 1px solid #343a40;
+}
+
+.leave-btn {
+  color: #dc3645;
+  border: 1px solid #dc3645;
+}
+
+/* ------------- Rockets ------------- */
+.rocket-container {
+  display: flex;
+  margin: 0 50px;
+}
+
+.rocket-image {
+  margin: 10px;
+  width: 350px;
+}
+
+.rocket-right-panel {
+  width: 100%;
+}
+
+.rocket-title {
+  font-weight: bold;
+}
+
+.rocket-description {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.reserved-notification {
+  padding: 5px;
+  font-size: 16px;
+  margin-right: 5px;
+  background-color: #18a2b8;
+  color: #fff;
+  border-radius: 5px;
+  border: 1px solid #18a2b8;
+}
+
+.rocket-cancel {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #6d757d;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #6d757d;
+}
+
+.rocket-reserve {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #007bff;
+}
+
+/* ------------- Rockets ------------- */
+
+.profile-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.profile-container > div {
+  width: 40%;
+}
+
+.reserved-column {
+  border: 1px solid #dfdfdf;
+  border-radius: 4px;
+}
+
+.reserved-item {
+  border-bottom: 1px solid #dfdfdf;
+  padding: 20px 0 40px 30px;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.reserved-item:nth-last-child(1) {
+  border: none;
 }
