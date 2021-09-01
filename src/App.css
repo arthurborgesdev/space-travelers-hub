@@ -55,40 +55,68 @@ thead {
 th,
 td {
   padding: 10px;
-  font-size: 18px;
+}
+
+th,
+.mission-title {
+  font-size: 20px;
 }
 
 tbody > tr:nth-child(odd) {
   background-color: #f2f2f2;
 }
 
-.mission-title,
-.mission-description {
+.mission-title {
   vertical-align: text-top;
+  font-weight: bold;
 }
 
-.mission-title {
-  font-weight: bold;
+.mission-description {
+  letter-spacing: 1px;
+}
+
+.mission-reserve,
+.mission-btn {
+  text-align: center;
 }
 
 .mission-reserve > span {
   white-space: nowrap;
   color: #fff;
-  background-color: #6d757d;
   border-radius: 6px;
   padding: 4px;
   font-weight: bold;
 }
 
+.active-member {
+  background-color: #18a2b8;
+}
+
+.inactive-member {
+  background-color: #6d757d;
+}
+
+.mission-btn {
+  min-width: 190px;
+}
+
 .mission-btn > button {
   white-space: nowrap;
-  color: #343a40;
   background-color: inherit;
-  border: 1px solid #343a40;
   border-radius: 4px;
   font-size: 20px;
   padding: 8px;
   margin: 0 20px;
+}
+
+.join-btn {
+  color: #343a40;
+  border: 1px solid #343a40;
+}
+
+.leave-btn {
+  color: #dc3645;
+  border: 1px solid #dc3645;
 }
 
 /* ------------- Rockets ------------- */
