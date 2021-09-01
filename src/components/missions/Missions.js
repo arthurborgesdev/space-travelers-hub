@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import getMissions from '../../redux/slices/missionsSlice';
-import { joinMission } from '../../redux/missions/missions';
+import { toggleMission } from '../../redux/missions/missions';
 
 const Missions = () => {
   const state = useSelector((state) => state.missionsReducer.missions);
@@ -14,9 +14,9 @@ const Missions = () => {
     }
   }, []);
 
-  const joinClickEvent = (e) => {
+  const toggleClickEvent = (e) => {
     const missionID = e.target.parentNode.parentNode.id;
-    dispatch(joinMission(missionID));
+    dispatch(toggleMission(missionID));
   };
 
   const missionsTable = state.map((mission) => (
@@ -33,8 +33,8 @@ const Missions = () => {
       <td className="mission-btn">
         {
           mission.reserved
-            ? <button type="button" className="leave-btn" onClick={joinClickEvent}>Leave Mission</button>
-            : <button type="button" className="join-btn" onClick={joinClickEvent}>Join Mission</button>
+            ? <button type="button" className="leave-btn" onClick={toggleClickEvent}>Leave Mission</button>
+            : <button type="button" className="join-btn" onClick={toggleClickEvent}>Join Mission</button>
         }
       </td>
     </tr>

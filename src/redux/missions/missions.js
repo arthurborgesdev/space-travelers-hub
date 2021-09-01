@@ -2,7 +2,7 @@ import { GET_MISSIONS, GET_MISSIONS_SUCCESS, GET_MISSIONS_ERR } from '../slices/
 
 // Actions
 
-const JOIN_MISSION = 'missions/missions/JOIN_MISSION';
+const TOGGLE_MISSION = 'missions/missions/TOGGLE_MISSION';
 
 // Initial state
 
@@ -12,8 +12,8 @@ const initialState = {
 
 // Action Creators
 
-export const joinMission = (payload) => ({
-  type: JOIN_MISSION,
+export const toggleMission = (payload) => ({
+  type: TOGGLE_MISSION,
   payload,
 });
 
@@ -21,13 +21,13 @@ export const joinMission = (payload) => ({
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case JOIN_MISSION:
+    case TOGGLE_MISSION:
     {
       const newMissions = state.missions.map((mission) => {
         if (mission.mission_id !== action.payload) {
           return mission;
         }
-        return { ...mission, reserved: true };
+        return { ...mission, reserved: !mission.reserved };
       });
       return { ...state, missions: newMissions };
     }
