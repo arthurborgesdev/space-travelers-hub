@@ -1,11 +1,19 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { reserveRocket } from '../../redux/rockets/rockets';
 
 const Rockets = () => {
   const rockets = useSelector((state) => state.rocketsReducer.rockets);
 
+  const dispatch = useDispatch();
+
+  const handleReserveClick = (e) => {
+    const rocketID = e.target.parentElement.parentElement.id;
+    dispatch(reserveRocket(rocketID));
+  };
+
   const rocketList = rockets.map((rocket) => (
-    <div key={rocket.id} className="rocket-container">
+    <div key={rocket.id} id={rocket.id} className="rocket-container">
       <img className="rocket-image" alt="rocket" src={rocket.flickr_images[0]} />
       <div className="rocket-right-panel">
         <p className="rocket-title">{rocket.rocket_name}</p>
@@ -20,7 +28,14 @@ const Rockets = () => {
         {
           rocket.reserved
             ? <input className="rocket-cancel" type="button" value="Cancel reservation" />
-            : <input className="rocket-reserve" type="button" value="Reserve Rocket" />
+            : (
+              <input
+                className="rocket-reserve"
+                type="button"
+                value="Reserve Rocket"
+                onClick={handleReserveClick}
+              />
+            )
         }
       </div>
     </div>
