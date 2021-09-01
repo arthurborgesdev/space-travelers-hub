@@ -2,7 +2,7 @@ import { GET_ROCKETS, GET_ROCKETS_SUCCESS, GET_ROCKETS_ERR } from '../slices/roc
 
 // Actions
 
-const RESERVE_ROCKET = 'rockets/rockets/RESERVE_ROCKET';
+const TOGGLE_RESERVE_ROCKET = 'rockets/rockets/TOGGLE_RESERVE_ROCKET';
 
 // Initial state
 
@@ -12,8 +12,8 @@ const initialState = {
 
 // Action Creators
 
-export const reserveRocket = (payload) => ({
-  type: RESERVE_ROCKET,
+export const toggleReserveRocket = (payload) => ({
+  type: TOGGLE_RESERVE_ROCKET,
   payload,
 });
 
@@ -21,13 +21,13 @@ export const reserveRocket = (payload) => ({
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case RESERVE_ROCKET:
+    case TOGGLE_RESERVE_ROCKET:
     {
       const newRockets = state.rockets.map((rocket) => {
         if (rocket.id !== Number(action.payload)) {
           return rocket;
         }
-        return { ...rocket, reserved: true };
+        return { ...rocket, reserved: !rocket.reserved };
       });
       return { ...state, rockets: newRockets };
     }

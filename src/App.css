@@ -127,7 +127,7 @@ tbody > tr:nth-child(odd) {
 
 .rocket-image {
   margin: 10px;
-  width: 200px;
+  width: 350px;
 }
 
 .rocket-right-panel {
@@ -143,6 +143,8 @@ tbody > tr:nth-child(odd) {
 }
 
 .reserved-notification {
+  padding: 5px;
+  font-size: 16px;
   margin-right: 5px;
   background-color: #18a2b8;
   color: #fff;
@@ -151,6 +153,8 @@ tbody > tr:nth-child(odd) {
 }
 
 .rocket-cancel {
+  padding: 10px;
+  font-size: 16px;
   border: 1px solid #6d757d;
   border-radius: 5px;
   background-color: #fff;
@@ -160,7 +164,8 @@ tbody > tr:nth-child(odd) {
 .rocket-reserve {
   background-color: #007bff;
   color: #fff;
-  padding: 5px;
+  padding: 10px;
+  font-size: 16px;
   border-radius: 5px;
   border: 1px solid #007bff;
 }

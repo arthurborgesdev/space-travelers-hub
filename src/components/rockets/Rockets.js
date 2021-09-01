@@ -1,15 +1,15 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { reserveRocket } from '../../redux/rockets/rockets';
+import { toggleReserveRocket } from '../../redux/rockets/rockets';
 
 const Rockets = () => {
   const rockets = useSelector((state) => state.rocketsReducer.rockets);
 
   const dispatch = useDispatch();
 
-  const handleReserveClick = (e) => {
+  const handleToggleReserveClick = (e) => {
     const rocketID = e.target.parentElement.parentElement.id;
-    dispatch(reserveRocket(rocketID));
+    dispatch(toggleReserveRocket(rocketID));
   };
 
   const rocketList = rockets.map((rocket) => (
@@ -27,13 +27,20 @@ const Rockets = () => {
         </p>
         {
           rocket.reserved
-            ? <input className="rocket-cancel" type="button" value="Cancel reservation" />
+            ? (
+              <input
+                className="rocket-cancel"
+                type="button"
+                value="Cancel reservation"
+                onClick={handleToggleReserveClick}
+              />
+            )
             : (
               <input
                 className="rocket-reserve"
                 type="button"
                 value="Reserve Rocket"
-                onClick={handleReserveClick}
+                onClick={handleToggleReserveClick}
               />
             )
         }
