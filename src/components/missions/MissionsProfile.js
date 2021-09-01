@@ -7,11 +7,11 @@ const MissionsProfile = () => {
   const joined = state.filter((mission) => mission.reserved);
 
   const showJoined = joined.map((mission) => (
-    <div key={mission.mission_id}>{mission.mission_name}</div>
+    <div key={mission.mission_id} className="reserved-item">{mission.mission_name}</div>
   ));
 
   return (
-    <div>
+    <div className="reserved-column">
       {showJoined}
     </div>
   );

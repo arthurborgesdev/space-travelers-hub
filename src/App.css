@@ -169,3 +169,31 @@ tbody > tr:nth-child(odd) {
   border-radius: 5px;
   border: 1px solid #007bff;
 }
+
+/* ------------- Rockets ------------- */
+
+.profile-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.profile-container > div {
+  width: 40%;
+}
+
+.reserved-column {
+  border: 1px solid #dfdfdf;
+  border-radius: 4px;
+}
+
+.reserved-item {
+  border-bottom: 1px solid #dfdfdf;
+  padding: 20px 0 40px 30px;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.reserved-item:nth-last-child(1) {
+  border: none;
+}
